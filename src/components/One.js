@@ -1,22 +1,19 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class One extends Component {
-  state = {
-    count: 0
-  };
-  increase = () => {
-    this.setState({ count: this.state.count + 1 });
+const One = (props) => {
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1);
   };
 
-  render() {
-    return (
-      <div style={{ marginBottom: "50px" }}>
-        <h2>Challenge 1</h2>
-        <p>Count is: {this.state.count}</p>
-        <button onClick={this.increase}>Increase Count!</button>
-      </div>
-    );
-  }
+  return (
+    <div style={{ marginBottom: "50px" }}>
+      <h2>Challenge 1</h2>
+      <p>Count is: {count}</p>
+      <button onClick={increase}>Increase Count!</button>
+    </div>
+  );
 }
 
 export default One;
